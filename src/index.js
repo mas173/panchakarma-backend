@@ -11,7 +11,7 @@ const practationerRoute = require("./routes/practationer.route");
 const mediaRoutes = require("./routes/media.routes");
 const detailsroute = require("./routes/details.route");
 const chatRouter = require("./routes/chat.route");
-const PORT = process.env._PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 
 
