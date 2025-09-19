@@ -11,7 +11,7 @@ const practationerRoute = require("./routes/practationer.route");
 const mediaRoutes = require("./routes/media.routes");
 const detailsroute = require("./routes/details.route");
 const chatRouter = require("./routes/chat.route");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080
 
 
 
@@ -35,9 +35,11 @@ app.use("/api/media",mediaRoutes)
 app.use("/api/details",detailsroute)
 app.use("/api/chat",chatRouter)
 
-dbconnect().then(() => {
-  app.listen(PORT, () => {
-
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
+  dbconnect().then(() => {
+    console.log("✅ Database connected successfully");
+  }).catch((err) => {
+    console.error("❌ Database connection failed:", err);
   });
 });
