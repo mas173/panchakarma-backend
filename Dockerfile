@@ -14,7 +14,7 @@ RUN npm install --production
 COPY . .
 
 # Expose the port your app runs on (change if needed)
-EXPOSE 8080
+EXPOSE 3000
 
 # Start the backend server
 CMD ["node", "src/index.js"]
